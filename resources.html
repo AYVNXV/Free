@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Free resources directory: free cloud storage, free hosting and more. Browse and pick what you need.">
+  <title>Free Resources – WebToolVault</title>
+<meta name="theme-color" content="#1f6b55">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .res-wrap { max-width: 900px; margin: 0 auto; }
+    .res-hero { text-align: center; margin-bottom: 18px; }
+    .res-hero h1 { margin: 4px 0 6px; font-size: clamp(1.5rem, 4vw, 2rem); }
+    .res-search {
+      width: 100%;
+      max-width: 520px;
+      display: block;
+      margin: 14px auto 12px;
+      font-size: 1rem;
+      padding: 12px 16px;
+      border: 2px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+    }
+    .res-search:focus { outline: none; border-color: var(--ac); }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .chip {
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: #fff !important;
+      color: var(--text) !important;
+      cursor: pointer;
+    }
+    .chip:hover { border-color: var(--ac); background: var(--soft) !important; }
+    .chip.active {
+      background: var(--ac) !important;
+      color: #fff !important;
+      border-color: var(--ac);
+    }
+    .res-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    .res-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 22px 20px;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      box-shadow: var(--shadow);
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+    a.res-card:hover {
+      border-color: var(--ac);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(31, 107, 85, 0.12);
+      text-decoration: none;
+      color: var(--text);
+    }
+    .res-card .icon { font-size: 2rem; display: block; margin-bottom: 8px; }
+    .res-card h2 {
+      font-size: 1.1rem;
+      margin: 0 0 6px;
+      color: var(--ac);
+      border: none;
+      padding: 0;
+    }
+    .res-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.4;
+    }
+    .res-card .tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.73rem;
+      background: var(--soft);
+      color: var(--ac);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+    .res-card.soon-card { opacity: 0.65; cursor: default; }
+    .res-card.soon-card .tag { background: #f0efe8; color: var(--muted); }
+    #resEmpty {
+      display: none;
+      text-align: center;
+      color: var(--muted);
+      padding: 36px 16px;
+    }
+  </style>
+<!-- SEO:START -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://yourdomain.com/resources.html">
+<meta property="og:site_name" content="WebToolVault">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yourdomain.com/resources.html">
+<meta property="og:image" content="https://yourdomain.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WebToolVault - free online file converters">
+<meta property="og:title" content="Free Resources – WebToolVault">
+<meta property="og:description" content="Free resources directory: free cloud storage, free hosting and more. Browse and pick what you need.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Resources – WebToolVault">
+<meta name="twitter:description" content="Free resources directory: free cloud storage, free hosting and more. Browse and pick what you need.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourdomain.com/"}, {"@type": "ListItem", "position": 2, "name": "Resources", "item": "https://yourdomain.com/resources.html"}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">WebToolVault</a>
+    <div class="badge">100% Free • No Ads • Forever Free • Private (Runs in Browser)</div>
+    <nav class="cat-nav">
+      <a href="image.html">Image</a>
+      <a href="resizer.html">Resizer</a>
+      <a href="compressor.html">Compressor</a>
+      <a href="audio.html">Audio</a>
+      <a href="video.html">Video</a>
+      <a href="documents.html">Documents</a>
+      <a href="resources.html" class="active">Resources</a>
+      <a href="more.html">More Tools</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="res-wrap">
+      <a class="back" href="index.html">← Home</a>
+
+      <div class="res-hero">
+        <h1>Free Resources</h1>
+        <p class="sub">Choose what you are looking for. Hand-picked lists of free services in one place.</p>
+      </div>
+
+      <input type="search" id="resSearch" class="res-search" placeholder="Search resources (e.g. storage, hosting)...">
+
+      <div class="chips" id="chips">
+        <button type="button" class="chip active" data-cat="all">All</button>
+        <button type="button" class="chip" data-cat="storage">Storage</button>
+        <button type="button" class="chip" data-cat="hosting">Hosting</button>
+        <button type="button" class="chip" data-cat="developer">Developer</button>
+        <button type="button" class="chip" data-cat="design">Design</button>
+      </div>
+
+      <div class="res-grid" id="resGrid">
+
+        <!-- READY -->
+        <a class="res-card" href="storage.html" data-cat="storage" data-name="free storage cloud space drive backup">
+          <span class="icon">☁️</span>
+          <h2>Free Storage</h2>
+          <p>Where to get free cloud storage for your files, photos and backups.</p>
+          <span class="tag">Ready</span>
+        </a>
+
+        <!-- COMING SOON -->
+        <div class="res-card soon-card" data-cat="hosting" data-name="free hosting website server">
+          <span class="icon">🌐</span>
+          <h2>Free Hosting</h2>
+          <p>Free places to host your website or web app.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+
+        <div class="res-card soon-card" data-cat="developer" data-name="free api developer tools database">
+          <span class="icon">🧩</span>
+          <h2>Free APIs &amp; Databases</h2>
+          <p>Free APIs and databases for your projects.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+
+        <div class="res-card soon-card" data-cat="design" data-name="free design images icons fonts">
+          <span class="icon">🎨</span>
+          <h2>Free Design Assets</h2>
+          <p>Free images, icons and fonts for your work.</p>
+          <span class="tag">Coming soon</span>
+        </div>
+
+      </div>
+
+      <div id="resEmpty">No resources found. Try a different search.</div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    WebToolVault – a free resource. No ads, no tracking, no accounts.
+    <br>
+    <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
+  </footer>
+
+  <script>
+    (function () {
+      var cards = Array.prototype.slice.call(document.querySelectorAll("#resGrid .res-card"));
+      var chips = Array.prototype.slice.call(document.querySelectorAll("#chips .chip"));
+      var search = document.getElementById("resSearch");
+      var empty = document.getElementById("resEmpty");
+      var activeCat = "all";
+
+      function apply() {
+        var q = search.value.trim().toLowerCase();
+        var shown = 0;
+        cards.forEach(function (c) {
+          var text = (c.textContent + " " + (c.getAttribute("data-name") || "")).toLowerCase();
+          var okCat = activeCat === "all" || c.getAttribute("data-cat") === activeCat;
+          var okQ = !q || text.indexOf(q) !== -1;
+          var show = okCat && okQ;
+          c.style.display = show ? "" : "none";
+          if (show) shown++;
+        });
+        empty.style.display = shown ? "none" : "block";
+      }
+
+      chips.forEach(function (chip) {
+        chip.addEventListener("click", function () {
+          chips.forEach(function (c) { c.classList.remove("active"); });
+          chip.classList.add("active");
+          activeCat = chip.getAttribute("data-cat");
+          apply();
+        });
+      });
+
+      search.addEventListener("input", apply);
+    })();
+  </script>
+</body>
+</html>

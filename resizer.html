@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Free online image resizer. Resize JPG, PNG, WebP, GIF, SVG and ICO by pixels or percentage. The format stays the same. Private, runs in your browser.">
+  <title>Image Resizer – WebToolVault</title>
+  <meta name="theme-color" content="#1f6b55">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+<!-- SEO:START -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://yourdomain.com/resizer.html">
+<meta property="og:site_name" content="WebToolVault">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yourdomain.com/resizer.html">
+<meta property="og:image" content="https://yourdomain.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WebToolVault - free online file converters">
+<meta property="og:title" content="Image Resizer – WebToolVault">
+<meta property="og:description" content="Free online image resizer. Resize JPG, PNG, WebP, GIF, SVG and ICO by pixels or percentage. The format stays the same. Private, runs in your browser.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Image Resizer – WebToolVault">
+<meta name="twitter:description" content="Free online image resizer. Resize JPG, PNG, WebP, GIF, SVG and ICO by pixels or percentage. The format stays the same. Private, runs in your browser.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourdomain.com/"}, {"@type": "ListItem", "position": 2, "name": "Image Resizer", "item": "https://yourdomain.com/resizer.html"}]}</script>
+<!-- SEO:END -->
+</head>
+<body data-tool="resize">
+  <header class="site-header">
+    <a class="brand" href="index.html">WebToolVault</a>
+    <div class="badge">100% Free • No Ads • No Sign-up • Private (Runs in Browser)</div>
+    <nav class="cat-nav">
+      <a href="image.html">Image</a>
+      <a href="resizer.html" class="active">Resizer</a>
+      <a href="compressor.html">Compressor</a>
+      <a href="audio.html">Audio</a>
+      <a href="video.html">Video</a>
+      <a href="documents.html">Documents</a>
+      <a href="more.html">More Tools</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="converter-wrap">
+      <a class="back" href="index.html">← Home</a>
+      <h1 style="margin: 4px 0 6px; text-align:center;">Image Resizer Online</h1>
+      <p class="sub" style="text-align:center;">Resize images by pixels or percentage. Your file format stays the same: JPG stays JPG, ICO stays ICO. Runs fully in your browser.</p>
+
+      <div class="drop-zone" id="drop">
+        <button type="button" class="big-btn" id="pickBtn">Select Images</button>
+        <div class="hint">or drag &amp; drop here</div>
+        <div class="privacy">Files stay on your device. Nothing is sent to any server.</div>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif,image/bmp,image/svg+xml,image/avif,image/tiff,.jpg,.jpeg,.jfif,.png,.webp,.gif,.bmp,.svg,.avif,.tif,.tiff,.ico,.cur" multiple hidden>
+      </div>
+
+      <div class="file-list" id="fileList" style="display:none;"></div>
+
+      <div class="options-box">
+        <label>Output format:</label>
+        <p style="margin:0; color:var(--muted); font-size:0.9rem;">Same as your original file. It is never changed.</p>
+
+        <div style="margin-top:18px;">
+          <label>Resize method:</label>
+          <div class="radio-row">
+            <label><input type="radio" name="resize" value="percent" checked> Change by %</label>
+            <label><input type="radio" name="resize" value="pixels"> Change by pixels</label>
+            <label><input type="radio" name="resize" value="none"> No change</label>
+          </div>
+        </div>
+
+        <div id="pixelOpts" style="display:none; margin-top:12px;">
+          <div style="display:flex; gap:12px; flex-wrap:wrap;">
+            <div>
+              <label for="w">Width (px)</label>
+              <input type="number" id="w" min="1" placeholder="e.g. 800">
+            </div>
+            <div>
+              <label for="h">Height (px)</label>
+              <input type="number" id="h" min="1" placeholder="e.g. 600">
+            </div>
+          </div>
+          <label style="margin-top:10px; font-weight:500;"><input type="checkbox" id="keepRatio" checked> Keep aspect ratio</label>
+        </div>
+
+        <div id="percentOpts" style="margin-top:12px;">
+          <label for="pct">Scale %</label>
+          <input type="number" id="pct" min="1" max="500" value="50" style="max-width:120px;">
+        </div>
+
+        <div style="margin-top:18px;">
+          <label for="quality">Quality (JPG, WEBP, AVIF): <span id="qVal">0.90</span></label>
+          <input type="range" id="quality" min="0.1" max="1" step="0.01" value="0.90" style="width:100%; max-width:280px; accent-color:var(--ac);">
+          <div style="font-size:0.82rem; color:var(--muted); margin-top:4px;">Other formats keep full quality.</div>
+        </div>
+      </div>
+
+      <button class="convert-btn" id="convertBtn" disabled>Resize Images</button>
+      <div class="result-area" id="result" aria-live="polite"></div>
+
+      <div class="options-box" style="margin-top:28px;">
+        <label style="margin-bottom:6px;">Good to know</label>
+        <p style="margin:0; color:var(--muted); font-size:0.9rem;">
+          Works with JPG, PNG, WEBP, GIF, BMP, ICO, CUR, SVG, AVIF and TIFF. Animated GIF, PNG and WEBP files are skipped so they do not lose their animation.
+          Icons (ICO, CUR) can be at most 256 px, and an ICO with several sizes keeps only its largest picture.
+          To change the format, use the <a href="image.html">Image Converter</a>.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    WebToolVault – a free resource. No ads, no accounts, no file uploads.
+    <br>
+    <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
+  </footer>
+  <script src="js/image-tools.js"></script>
+</body>
+</html>

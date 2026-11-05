@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Page Not Found | WebToolVault</title>
+<meta name="theme-color" content="#1f6b55">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="The page you are looking for could not be found on WebToolVault. Choose a tool below.">
+
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f4f6f5;
+  --card: #ffffff;
+  --line: #e0e4e2;
+  --text: #1f2a26;
+  --muted: #5c6b65;
+  --ac: #1f6b55;
+  --ac-dark: #164d3e;
+  --soft: #e7f2ed;
+  --radius: 12px;
+  --shadow: 0 4px 18px rgba(31, 42, 38, 0.06);
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1, h2, h3 { font-weight: 650; letter-spacing: -0.02em; }
+a { color: var(--ac); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.site-header {
+  background: var(--card);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ac);
+  display: inline-block;
+  margin-bottom: 6px;
+}
+.brand:hover { text-decoration: none; opacity: 0.9; }
+
+/* Nav pills */
+.cat-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.cat-nav a {
+  font-size: 0.84rem;
+  color: var(--text);
+  text-decoration: none;
+  padding: 6px 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fafbfa;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+.cat-nav a:hover {
+  border-color: var(--ac);
+  color: var(--ac);
+  background: var(--soft);
+  text-decoration: none;
+}
+
+/* Main */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 28px 16px 48px;
+}
+
+/* 404 box */
+.box {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 34px 24px;
+  box-shadow: var(--shadow);
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+.badge {
+  display: inline-block;
+  background: var(--soft);
+  color: var(--ac);
+  border: 1px solid #c5ddd3;
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.code {
+  font-size: clamp(4.5rem, 20vw, 7.5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ac);
+  margin: 0;
+}
+.box h1 {
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  margin: 8px 0 8px;
+}
+.sub {
+  color: var(--muted);
+  margin: 0 auto;
+  max-width: 440px;
+  font-size: 0.98rem;
+}
+.path {
+  display: none;
+  margin: 16px auto 0;
+  max-width: 100%;
+  word-break: break-all;
+  font-family: Consolas, Menlo, monospace;
+  font-size: 0.82rem;
+  color: var(--muted);
+  background: #fafbfa;
+  border: 1px dashed #c8ceca;
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+/* Buttons */
+.row {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.btn,
+button {
+  font-size: 0.94rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid var(--ac);
+  background: var(--ac);
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.15s;
+  font-family: inherit;
+}
+.btn:hover,
+button:hover { background: var(--ac-dark); text-decoration: none; }
+.btn.alt,
+button.alt { background: #fff; color: var(--ac); }
+.btn.alt:hover,
+button.alt:hover { background: var(--soft); }
+
+/* Quick links section */
+.section { margin-top: 36px; }
+.section h2 {
+  font-size: 1.2rem;
+  margin: 0 0 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--line);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 12px;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 15px;
+  text-decoration: none;
+  color: var(--text);
+  display: block;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+  box-shadow: var(--shadow);
+}
+.card:hover {
+  border-color: var(--ac);
+  background: #fbfefc;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(31, 107, 85, 0.08);
+}
+.card b { display: block; font-size: 0.95rem; margin-bottom: 3px; }
+.card small { color: var(--muted); font-size: 0.78rem; }
+
+.note {
+  margin: 30px auto 0;
+  max-width: 640px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: var(--soft);
+  color: #1a3d32;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--card);
+  text-align: center;
+  padding: 18px 16px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 520px) {
+  .grid { grid-template-columns: 1fr 1fr; }
+  .box { padding: 26px 16px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/index.html">WebToolVault</a>
+  <nav class="cat-nav" aria-label="Main navigation">
+    <a href="/index.html">Home</a>
+    <a href="/image.html">Image</a>
+    <a href="/resizer.html">Resizer</a>
+    <a href="/compressor.html">Compressor</a>
+    <a href="/audio.html">Audio</a>
+    <a href="/video.html">Video</a>
+    <a href="/documents.html">Documents</a>
+    <a href="/resources.html">Resources</a>
+  </nav>
+</header>
+
+<main>
+  <div class="box">
+    <span class="badge">Error 404</span>
+    <p class="code">404</p>
+    <h1>Page not found</h1>
+    <p class="sub">
+      Sorry, we could not find the page you are looking for.
+      It may have been moved or deleted, or the link may be wrong.
+    </p>
+
+    <div class="path" id="path"></div>
+
+    <div class="row">
+      <a class="btn" href="/index.html">Go to Home</a>
+      <button class="alt" id="back" type="button">Go Back</button>
+    </div>
+  </div>
+
+  <section class="section">
+    <h2>Where do you want to go?</h2>
+    <div class="grid">
+      <a class="card" href="/image.html"><b>Image Converter</b><small>JPG, PNG, WebP</small></a>
+      <a class="card" href="/resizer.html"><b>Image Resizer</b><small>Change image size</small></a>
+      <a class="card" href="/compressor.html"><b>Image Compressor</b><small>Make files smaller</small></a>
+      <a class="card" href="/audio.html"><b>Audio Tools</b><small>MP3, WAV</small></a>
+      <a class="card" href="/video.html"><b>Video Converter</b><small>MP4, WebM, GIF</small></a>
+      <a class="card" href="/documents.html"><b>Documents</b><small>PDF and text tools</small></a>
+      <a class="card" href="/resources.html"><b>Free Resources</b><small>Storage and directories</small></a>
+      <a class="card" href="/index.html"><b>All Tools</b><small>See the full list</small></a>
+    </div>
+  </section>
+
+  <div class="note">
+    Your privacy is safe. Nothing was uploaded or sent to any server on this page.
+  </div>
+</main>
+
+<footer class="site-footer">
+  WebToolVault – a free resource. No ads, no tracking, no accounts.<br>
+  <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms of Service</a>
+</footer>
+
+<script>
+  // Show the wrong address (only in your own browser, never sent anywhere)
+  (function () {
+    var p = location.pathname;
+    if (p && p !== "/" && p !== "/404.html") {
+      var el = document.getElementById("path");
+      el.textContent = p;
+      el.style.display = "block";
+    }
+  })();
+
+  document.getElementById("back").addEventListener("click", function () {
+    if (history.length > 1) history.back();
+    else location.href = "/index.html";
+  });
+</script>
+</body>
+</html>

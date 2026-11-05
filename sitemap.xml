@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://yourdomain.com/</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yourdomain.com/image.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yourdomain.com/resizer.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yourdomain.com/compressor.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://yourdomain.com/audio.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yourdomain.com/video.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yourdomain.com/documents.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yourdomain.com/developer.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://yourdomain.com/resources.html</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yourdomain.com/storage.html</loc><lastmod>2026-11-05</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yourdomain.com/more.html</loc><lastmod>2026-11-05</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://yourdomain.com/privacy.html</loc><lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://yourdomain.com/terms.html</loc><lastmod>2026-11-05</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
+</urlset>

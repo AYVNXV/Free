@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free & Paid Tools Directory – 99 Tools, Software, Design Assets, Stock Photos, Fonts & More</title>
+<meta name="theme-color" content="#1f6b55">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta name="description" content="Discover 99 free and paid tools, software, stock photos, videos, fonts, icons, design assets, hosting, code tools and online utilities. Find free images, free hosting, free templates and more in one place.">
+    <meta name="keywords" content="free tools, free software, free stock photos, free images, free fonts, free icons, free hosting, freemium tools, design assets, code tools, online tools">
+    <style>
+        :root {
+            --bg: #f8f4ef;
+            --card: #ffffff;
+            --text: #1a1a1a;
+            --muted: #6b7280;
+            --border: #e8e2d9;
+            --primary: #1f2937;
+            --accent: #111827;
+            --free: #10b981;
+            --paid: #ef4444;
+            --freemium: #f59e0b;
+            --shadow: 0 4px 20px rgba(0,0,0,0.06);
+            --radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: var(--bg);
+            padding: 20px 24px 12px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid transparent;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            max-width: 1280px;
+            margin: 0 auto 16px;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f3eade;
+            color: #5c4a32;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .search-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 1;
+            max-width: 520px;
+            min-width: 260px;
+        }
+
+        .search-box {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 18px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 15px;
+            background: transparent;
+            color: var(--text);
+        }
+
+        .search-box input::placeholder {
+            color: #9ca3af;
+        }
+
+        .filter-select {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            padding: 10px 16px;
+            font-size: 14px;
+            color: var(--text);
+            cursor: pointer;
+            outline: none;
+        }
+
+        .search-btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Category pills */
+        .categories {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding-bottom: 4px;
+        }
+
+        .cat-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 999px;
+            font-size: 13.5px;
+            font-weight: 500;
+            border: 1px solid transparent;
+            background: #fff;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+
+        .cat-pill:hover {
+            background: #f3f0eb;
+            color: var(--text);
+        }
+
+        .cat-pill.active {
+            background: var(--accent);
+            color: #fff;
+            border-color: var(--accent);
+        }
+
+        .cat-count {
+            font-size: 12px;
+            opacity: 0.85;
+        }
+
+        /* Main content */
+        .main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 24px 20px 60px;
+        }
+
+        .results-info {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 18px;
+        }
+
+        /* Cards grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .card {
+            background: var(--card);
+            border-radius: var(--radius);
+            padding: 18px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.09);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .card-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+        }
+
+        .logo {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            color: #fff;
+            flex-shrink: 0;
+            text-transform: uppercase;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 4px;
+        }
+
+        .card-info {
+            min-width: 0;
+        }
+
+        .card-name {
+            font-size: 15.5px;
+            font-weight: 650;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-url {
+            font-size: 12.5px;
+            color: var(--muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .open-btn {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            flex-shrink: 0;
+            text-decoration: none;
+            transition: background 0.15s;
+        }
+
+        .open-btn:hover {
+            background: #000;
+        }
+
+        .card-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 2px;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 9px;
+            border-radius: 999px;
+            font-size: 11.5px;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .badge-free {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .badge-paid {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .badge-freemium {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .badge-cat {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.45;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.45);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 200;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 520px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            animation: modalIn 0.22s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: translateY(16px) scale(0.97); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .modal-header {
+            padding: 24px 24px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            border-bottom: 1px solid #f0ece6;
+        }
+
+        .modal-logo {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 20px;
+            color: #fff;
+            flex-shrink: 0;
+            overflow: hidden;
+            background: #f3f4f6;
+        }
+        .modal-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 6px;
+        }
+
+        .modal-title-area {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .modal-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 2px;
+        }
+
+        .modal-url {
+            font-size: 13.5px;
+            color: var(--muted);
+        }
+
+        .modal-close {
+            background: #f3f4f6;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover {
+            background: #e5e7eb;
+            color: #111;
+        }
+
+        .modal-body {
+            padding: 20px 24px 28px;
+        }
+
+        .modal-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 18px;
+        }
+
+        .modal-section {
+            margin-bottom: 18px;
+        }
+
+        .modal-section h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: #9ca3af;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .modal-section p {
+            font-size: 14.5px;
+            color: #374151;
+            line-height: 1.55;
+        }
+
+        .modal-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .feature-tag {
+            background: #f8f4ef;
+            color: #5c4a32;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: 12.5px;
+            font-weight: 500;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 22px;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 11px 22px;
+            border-radius: 999px;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-primary:hover {
+            background: #000;
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #374151;
+            border: none;
+            padding: 11px 20px;
+            border-radius: 999px;
+            font-size: 14.5px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: #e5e7eb;
+        }
+
+        /* Empty state */
+        .empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--muted);
+        }
+
+        .empty h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--text);
+        }
+
+        /* Footer note */
+        .footer-note {
+            text-align: center;
+            font-size: 13px;
+            color: #9ca3af;
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header-top {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrap {
+                max-width: none;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .title {
+                font-size: 18px;
+            }
+        }
+.logo-area { flex-wrap: wrap; }
+.footer-links {
+    text-align: center;
+    font-size: 13px;
+    color: #9ca3af;
+    padding: 10px 0 30px;
+}
+.footer-links a {
+    color: #5c4a32;
+    text-decoration: none;
+    font-weight: 500;
+}
+.footer-links a:hover { text-decoration: underline; }
+    </style>
+<!-- SEO:START -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://yourdomain.com/storage.html">
+<meta property="og:site_name" content="WebToolVault">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yourdomain.com/storage.html">
+<meta property="og:image" content="https://yourdomain.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WebToolVault - free online file converters">
+<meta property="og:title" content="Free &amp; Paid Tools Directory – 99 Tools, Software, Design Assets, Stock Photos, Fonts &amp; More">
+<meta property="og:description" content="Discover 99 free and paid tools, software, stock photos, videos, fonts, icons, design assets, hosting, code tools and online utilities. Find free images, free hosting, free templates and more in one place.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free &amp; Paid Tools Directory – 99 Tools, Software, Design Assets, Stock Photos, Fonts &amp; More">
+<meta name="twitter:description" content="Discover 99 free and paid tools, software, stock photos, videos, fonts, icons, design assets, hosting, code tools and online utilities. Find free images, free hosting, free templates and more in one place.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://yourdomain.com/"}, {"@type": "ListItem", "position": 2, "name": "Tools Directory", "item": "https://yourdomain.com/storage.html"}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-area">
+                <a href="index.html" class="back-btn">← Home</a>
+<a href="resources.html" class="back-btn">All Resources</a>
+                <h1 class="title">Tools Directory</h1>
+            </div>
+            <div class="search-wrap">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Search a website, tool or category..." autocomplete="off">
+                </div>
+                <select class="filter-select" id="licenseFilter">
+                    <option value="all">Free and paid</option>
+                    <option value="Free">Free only</option>
+                    <option value="Paid">Paid only</option>
+                    <option value="Freemium">Freemium</option>
+                </select>
+                <button class="search-btn" id="searchBtn" aria-label="Search">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                </button>
+            </div>
+        </div>
+        <div class="categories" id="categoryPills"></div>
+    </header>
+
+    <main class="main">
+        <div class="results-info" id="resultsInfo">Showing all tools</div>
+        <div class="grid" id="toolsGrid"></div>
+        <div class="empty" id="emptyState" style="display:none;">
+            <h3>No tools found</h3>
+            <p>Try a different search or category.</p>
+        </div>
+        <p class="footer-note">Browse free stock photos, fonts, icons, code tools, hosting and more. Updated regularly.</p>
+<div class="footer-links">
+    <a href="index.html">Home</a> •
+    <a href="privacy.html">Privacy Policy</a> •
+    <a href="terms.html">Terms of Service</a>
+</div>
+    </main>
+
+    <!-- Details Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" role="dialog" aria-modal="true">
+            <div class="modal-header">
+                <div class="modal-logo" id="modalLogo"></div>
+                <div class="modal-title-area">
+                    <div class="modal-title" id="modalTitle"></div>
+                    <div class="modal-url" id="modalUrl"></div>
+                </div>
+                <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-badges" id="modalBadges"></div>
+                <div class="modal-section">
+                    <h3>What it provides</h3>
+                    <p id="modalDesc"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Key features</h3>
+                    <div class="modal-features" id="modalFeatures"></div>
+                </div>
+                <div class="modal-section" id="modalLicenseSection">
+                    <h3>License & access</h3>
+                    <p id="modalLicense"></p>
+                </div>
+                <div class="modal-actions">
+                    <a class="btn-primary" id="modalOpenLink" href="#" target="_blank" rel="noopener">Open website ↗</a>
+                    <button class="btn-secondary" id="modalCloseBtn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tool data – clean English descriptions
+        const tools = [
+            // Audio
+            { name: "Artlist", url: "artlist.io", category: "Audio", license: "Paid", color: "#111", desc: "High-quality royalty-free music and sound effects for video creators, YouTubers and filmmakers. Unlimited downloads with subscription.", features: ["Music tracks", "Sound effects", "Royalty-free", "Video production"] },
+            { name: "Epidemic Sound", url: "epidemicsound.com", category: "Audio", license: "Paid", color: "#1a1a1a", desc: "Huge library of music and sound effects cleared for commercial use. Perfect for content creators who need worry-free licensing.", features: ["Music library", "SFX", "Commercial license", "YouTube safe"] },
+            { name: "Freesound", url: "freesound.org", category: "Audio", license: "Free", color: "#e11d48", desc: "Collaborative database of free audio samples and sound effects under Creative Commons. Great for indie projects and sound design.", features: ["Free samples", "Sound effects", "Creative Commons", "Upload allowed"] },
+            { name: "Pixabay Music", url: "pixabay.com", category: "Audio", license: "Free", color: "#00ab6c", desc: "Free stock music and sound effects you can use in personal and commercial projects without attribution in most cases.", features: ["Free music", "SFX", "Commercial use", "No attribution required"] },
+
+            // Code tools
+            { name: "Android Studio", url: "developer.android.com", category: "Code tools", license: "Free", color: "#3ddc84", desc: "Official IDE for Android app development. Includes emulator, debugging tools and full support for Kotlin and Java.", features: ["Android IDE", "Emulator", "Debugging", "Kotlin & Java"] },
+            { name: "cdnjs", url: "cdnjs.com", category: "Code tools", license: "Free", color: "#e44d26", desc: "Free and open-source CDN for popular JavaScript libraries, CSS frameworks and fonts. Fast global delivery.", features: ["JS libraries", "CSS frameworks", "CDN", "Open source"] },
+            { name: "FileZilla", url: "filezilla-project.org", category: "Code tools", license: "Free", color: "#b50000", desc: "Popular free FTP, FTPS and SFTP client for transferring files to and from web servers. Available for Windows, Mac and Linux.", features: ["FTP client", "SFTP", "Cross-platform", "File transfer"] },
+            { name: "Git", url: "git-scm.com", category: "Code tools", license: "Free", color: "#f05032", desc: "Distributed version control system used by millions of developers. Essential for tracking code changes and collaboration.", features: ["Version control", "Open source", "Branching", "Collaboration"] },
+            { name: "JetBrains", url: "jetbrains.com", category: "Code tools", license: "Paid", color: "#000", desc: "Professional IDEs including IntelliJ IDEA, PyCharm, WebStorm and more. Powerful tools for productive coding.", features: ["IDEs", "IntelliJ", "PyCharm", "Professional tools"] },
+            { name: "Node.js", url: "nodejs.org", category: "Code tools", license: "Free", color: "#339933", desc: "JavaScript runtime built on Chrome's V8 engine. Run JS on the server and build scalable network applications.", features: ["JavaScript runtime", "Server-side", "npm ecosystem", "Open source"] },
+            { name: "Notepad++", url: "notepad-plus-plus.org", category: "Code tools", license: "Free", color: "#90c53f", desc: "Lightweight free source code editor for Windows with syntax highlighting for many languages and plugin support.", features: ["Code editor", "Syntax highlighting", "Plugins", "Windows"] },
+            { name: "npm", url: "npmjs.com", category: "Code tools", license: "Free", color: "#cb3837", desc: "The world's largest software registry. Install and publish JavaScript packages for Node.js and the browser.", features: ["Package manager", "JavaScript", "Registry", "CLI"] },
+            { name: "Packagist", url: "packagist.org", category: "Code tools", license: "Free", color: "#f28d1a", desc: "Main Composer repository for PHP packages. Discover and install libraries for your PHP projects.", features: ["PHP packages", "Composer", "Library registry", "Open source"] },
+            { name: "Postman", url: "postman.com", category: "Code tools", license: "Freemium", color: "#ff6c37", desc: "API platform for building, testing and documenting APIs. Free tier available; paid plans for teams and advanced features.", features: ["API testing", "Collections", "Documentation", "Collaboration"] },
+            { name: "Python", url: "python.org", category: "Code tools", license: "Free", color: "#3776ab", desc: "Powerful, easy-to-learn programming language used for web, data science, automation, AI and more.", features: ["Programming language", "Data science", "Automation", "Open source"] },
+            { name: "Visual Studio Code", url: "code.visualstudio.com", category: "Code tools", license: "Free", color: "#007acc", desc: "Free, lightweight but powerful code editor from Microsoft with huge extension marketplace and Git integration.", features: ["Code editor", "Extensions", "Git", "Debugging"] },
+            { name: "XAMPP", url: "apachefriends.org", category: "Code tools", license: "Free", color: "#fb7a24", desc: "Free local web server stack with Apache, MariaDB, PHP and Perl. Perfect for testing websites on your computer.", features: ["Local server", "PHP", "MySQL", "Apache"] },
+
+            // Design assets
+            { name: "Behance", url: "behance.net", category: "Design assets", license: "Free", color: "#1769ff", desc: "Showcase and discover creative work. Browse portfolios, find inspiration and connect with designers worldwide.", features: ["Portfolios", "Inspiration", "Design community", "Projects"] },
+            { name: "Canva", url: "canva.com", category: "Design assets", license: "Freemium", color: "#00c4cc", desc: "Easy online design tool for social posts, presentations, posters and more. Huge free library plus Pro plan.", features: ["Graphic design", "Templates", "Social media", "Drag & drop"] },
+            { name: "Dribbble", url: "dribbble.com", category: "Design assets", license: "Free", color: "#ea4c89", desc: "Community of designers sharing shots of their work. Great for UI/UX inspiration and finding talent.", features: ["UI inspiration", "Design shots", "Community", "Hiring"] },
+            { name: "Figma Community", url: "figma.com", category: "Design assets", license: "Free", color: "#a259ff", desc: "Free UI kits, icons, templates and resources shared by the Figma community. Copy and use in your own files.", features: ["UI kits", "Templates", "Icons", "Figma files"] },
+            { name: "Flaticon", url: "flaticon.com", category: "Design assets", license: "Freemium", color: "#00b3e3", desc: "Millions of free and premium icons in multiple formats. Free with attribution; paid plans remove attribution.", features: ["Icons", "SVG & PNG", "Icon packs", "Attribution free option"] },
+            { name: "Freepik", url: "freepik.com", category: "Design assets", license: "Freemium", color: "#1273eb", desc: "Large collection of free and premium vectors, photos, PSD files and illustrations for designers.", features: ["Vectors", "Photos", "PSD", "Illustrations"] },
+            { name: "IconScout", url: "iconscout.com", category: "Design assets", license: "Freemium", color: "#3b82f6", desc: "Icons, illustrations and 3D assets. Free and premium options with easy search and download.", features: ["Icons", "Illustrations", "3D assets", "SVG"] },
+            { name: "LottieFiles", url: "lottiefiles.com", category: "Design assets", license: "Freemium", color: "#00d2b8", desc: "Lightweight animated icons and illustrations in Lottie format. Free library plus premium animations.", features: ["Animations", "Lottie", "Icons", "Web & mobile"] },
+            { name: "UI8", url: "ui8.net", category: "Design assets", license: "Paid", color: "#111", desc: "Premium UI kits, design systems, icons and templates for product designers and developers.", features: ["UI kits", "Design systems", "Templates", "Premium"] },
+            { name: "unDraw", url: "undraw.co", category: "Design assets", license: "Free", color: "#6c63ff", desc: "Open-source illustrations you can customize by color. Free for personal and commercial use.", features: ["Illustrations", "Custom colors", "SVG", "Open source"] },
+
+            // Fonts
+            { name: "Adobe Fonts", url: "fonts.adobe.com", category: "Fonts", license: "Paid", color: "#ff0000", desc: "High-quality fonts from Adobe Creative Cloud. Sync fonts to your desktop and use across Adobe apps and the web.", features: ["Premium fonts", "Creative Cloud", "Web fonts", "Desktop sync"] },
+            { name: "dafont", url: "dafont.com", category: "Fonts", license: "Free", color: "#c41e3a", desc: "Huge collection of free fonts for personal use. Many styles from decorative to script and display.", features: ["Free fonts", "Personal use", "Download", "Categories"] },
+            { name: "Font Squirrel", url: "fontsquirrel.com", category: "Fonts", license: "Free", color: "#6b7280", desc: "Hand-picked free fonts that are 100% free for commercial use. Also offers web font kits.", features: ["Commercial free", "Web fonts", "Hand-curated", "Download"] },
+            { name: "Google Fonts", url: "fonts.google.com", category: "Fonts", license: "Free", color: "#4285f4", desc: "Free open-source fonts optimized for the web. Easy to add to any website with a single line of code.", features: ["Web fonts", "Open source", "Easy embed", "Variable fonts"] },
+            { name: "MyFonts", url: "myfonts.com", category: "Fonts", license: "Paid", color: "#ff6600", desc: "Marketplace for premium fonts from independent foundries. Buy single fonts or families for commercial projects.", features: ["Premium fonts", "Foundries", "Commercial license", "Desktop & web"] },
+
+            // Hosting and domains
+            { name: "Cloudflare", url: "cloudflare.com", category: "Hosting and domains", license: "Freemium", color: "#f38020", desc: "CDN, DNS, security and free static hosting via Cloudflare Pages. Free plan is generous for many sites.", features: ["CDN", "DNS", "Free hosting", "Security"] },
+            { name: "GitHub Pages", url: "pages.github.com", category: "Hosting and domains", license: "Free", color: "#24292e", desc: "Free static site hosting directly from a GitHub repository. Perfect for portfolios, docs and project sites.", features: ["Static hosting", "Custom domain", "HTTPS", "Git-based"] },
+            { name: "Hostinger", url: "hostinger.com", category: "Hosting and domains", license: "Paid", color: "#673de6", desc: "Affordable web hosting, domains and website builders. Good performance and beginner-friendly panels.", features: ["Web hosting", "Domains", "Website builder", "WordPress"] },
+            { name: "InfinityFree", url: "infinityfree.com", category: "Hosting and domains", license: "Free", color: "#3b82f6", desc: "Completely free web hosting with PHP, MySQL and no ads on your site. Great for learning and small projects.", features: ["Free hosting", "PHP & MySQL", "No ads", "cPanel"] },
+            { name: "Namecheap", url: "namecheap.com", category: "Hosting and domains", license: "Paid", color: "#de3723", desc: "Popular domain registrar and hosting provider. Competitive prices and free WHOIS privacy on many domains.", features: ["Domains", "Hosting", "SSL", "Privacy"] },
+            { name: "Netlify", url: "netlify.com", category: "Hosting and domains", license: "Freemium", color: "#00c7b7", desc: "Modern platform for deploying static sites and JAMstack apps. Free tier includes continuous deployment from Git.", features: ["Static hosting", "CI/CD", "Forms", "Serverless"] },
+            { name: "Vercel", url: "vercel.com", category: "Hosting and domains", license: "Freemium", color: "#000", desc: "Frontend cloud platform optimized for Next.js and modern frameworks. Free hobby plan for personal projects.", features: ["Frontend hosting", "Next.js", "Edge functions", "Preview deploys"] },
+
+            // Icons
+            { name: "Bootstrap Icons", url: "icons.getbootstrap.com", category: "Icons", license: "Free", color: "#7952b3", desc: "Free, high-quality icon library designed for Bootstrap but usable anywhere. SVG and font formats.", features: ["SVG icons", "Bootstrap", "Open source", "Consistent style"] },
+            { name: "Feather Icons", url: "feathericons.com", category: "Icons", license: "Free", color: "#333", desc: "Simply beautiful open-source icons. Clean stroke style, easy to customize and use in any project.", features: ["Open source", "Stroke icons", "Lightweight", "Customizable"] },
+            { name: "Font Awesome", url: "fontawesome.com", category: "Icons", license: "Freemium", color: "#528dd7", desc: "The most popular icon set on the web. Free icons plus Pro plan with thousands more and extra styles.", features: ["Icon fonts", "SVG", "Pro icons", "Brands"] },
+            { name: "Heroicons", url: "heroicons.com", category: "Icons", license: "Free", color: "#8b5cf6", desc: "Beautiful hand-crafted SVG icons by the makers of Tailwind CSS. Available in outline and solid styles.", features: ["SVG", "Tailwind", "Outline & solid", "MIT license"] },
+            { name: "Material Icons", url: "fonts.google.com/icons", category: "Icons", license: "Free", color: "#4285f4", desc: "Google's official Material Design icon set. Thousands of icons in multiple styles, free to use.", features: ["Material Design", "Multiple styles", "Web & app", "Free"] },
+
+            // Online tools
+            { name: "Convertio", url: "convertio.co", category: "Online tools", license: "Freemium", color: "#1a73e8", desc: "Online file converter supporting hundreds of formats (documents, images, audio, video, ebooks).", features: ["File conversion", "Many formats", "Online", "Free tier"] },
+            { name: "GTmetrix", url: "gtmetrix.com", category: "Online tools", license: "Freemium", color: "#1a73e8", desc: "Analyze your website speed and performance. Get detailed reports and recommendations to improve load times.", features: ["Speed test", "Performance", "Reports", "Monitoring"] },
+            { name: "iLovePDF", url: "ilovepdf.com", category: "Online tools", license: "Freemium", color: "#e5322d", desc: "Free online tools to merge, split, compress, convert and edit PDF files. Simple and fast.", features: ["PDF tools", "Merge & split", "Compress", "Convert"] },
+            { name: "PageSpeed Insights", url: "pagespeed.web.dev", category: "Online tools", license: "Free", color: "#4285f4", desc: "Google's free tool to measure page performance on mobile and desktop and get optimization suggestions.", features: ["Speed analysis", "Core Web Vitals", "Google", "Free"] },
+            { name: "Remove.bg", url: "remove.bg", category: "Online tools", license: "Freemium", color: "#1a73e8", desc: "Automatically remove image backgrounds in seconds using AI. Free limited previews; paid for high-res downloads.", features: ["Background removal", "AI", "PNG output", "API"] },
+            { name: "Squoosh", url: "squoosh.app", category: "Online tools", license: "Free", color: "#4285f4", desc: "Free browser-based image compressor from Google. Reduce file size while keeping visual quality.", features: ["Image compression", "WebP & AVIF", "Browser-based", "Open source"] },
+            { name: "TinyPNG", url: "tinypng.com", category: "Online tools", license: "Freemium", color: "#a0d468", desc: "Smart PNG and JPEG compression. Shrink image file sizes significantly with almost no quality loss.", features: ["PNG & JPEG", "Compression", "Batch", "API"] },
+
+            // Photos and video
+            { name: "Adobe Stock", url: "stock.adobe.com", category: "Photos and video", license: "Paid", color: "#ff0000", desc: "Premium stock photos, vectors, videos and templates. High quality assets for professional projects.", features: ["Stock photos", "Videos", "Vectors", "Commercial license"] },
+            { name: "Coverr", url: "coverr.co", category: "Photos and video", license: "Free", color: "#111", desc: "Free stock video footage for websites and projects. Beautiful clips you can download and use freely.", features: ["Free video", "Stock footage", "Commercial use", "Download"] },
+            { name: "Mixkit", url: "mixkit.co", category: "Photos and video", license: "Free", color: "#ff6b6b", desc: "Free stock video clips, music and sound effects. High quality and free for commercial projects.", features: ["Free video", "Music", "SFX", "Commercial"] },
+            { name: "Pexels", url: "pexels.com", category: "Photos and video", license: "Free", color: "#05a081", desc: "Free stock photos and videos shared by talented creators. Free for personal and commercial use.", features: ["Free photos", "Free videos", "Commercial use", "No attribution required"] },
+            { name: "Pixabay", url: "pixabay.com", category: "Photos and video", license: "Free", color: "#00ab6c", desc: "Over 4 million free stock photos, vectors, videos and music. Safe for commercial use.", features: ["Photos", "Videos", "Vectors", "Music"] },
+            { name: "Shutterstock", url: "shutterstock.com", category: "Photos and video", license: "Paid", color: "#ee2b24", desc: "One of the largest stock marketplaces. Millions of photos, videos, music and illustrations.", features: ["Stock photos", "Videos", "Music", "Enterprise"] },
+            { name: "Unsplash", url: "unsplash.com", category: "Photos and video", license: "Free", color: "#111", desc: "Beautiful free high-resolution photos. Free to use under the Unsplash License for almost any purpose.", features: ["High-res photos", "Free license", "API", "Collections"] },
+            { name: "Videvo", url: "videvo.net", category: "Photos and video", license: "Freemium", color: "#00a0e3", desc: "Free and premium stock video footage, motion graphics and music. Free clips available with attribution.", features: ["Stock video", "Motion graphics", "Music", "Free & premium"] },
+
+            // Plugins
+            { name: "CodeCanyon", url: "codecanyon.net", category: "Plugins", license: "Paid", color: "#82b541", desc: "Marketplace for code, plugins, scripts and apps. Buy ready-made solutions for WordPress, PHP, JavaScript and more.", features: ["WordPress plugins", "Scripts", "Apps", "Envato"] },
+            { name: "Elementor", url: "elementor.com", category: "Plugins", license: "Freemium", color: "#92003b", desc: "Popular drag-and-drop page builder for WordPress. Free core plugin plus Pro version with more widgets and theme builder.", features: ["Page builder", "WordPress", "Drag & drop", "Templates"] },
+            { name: "WordPress plugins", url: "wordpress.org/plugins/", category: "Plugins", license: "Free", color: "#21759b", desc: "Official free plugin directory. Thousands of plugins to extend WordPress functionality for free.", features: ["WordPress", "Free plugins", "Official directory", "Open source"] },
+
+            // Software
+            { name: "APKMirror", url: "apkmirror.com", category: "Software", license: "Free", color: "#3ddc84", desc: "Safe place to download Android APKs. Verified uploads and multiple versions of popular apps.", features: ["Android APKs", "Safe downloads", "App versions", "Free"] },
+            { name: "Chocolatey", url: "community.chocolatey.org", category: "Software", license: "Free", color: "#5c9fd8", desc: "Package manager for Windows. Install software from the command line quickly and keep it updated.", features: ["Windows packages", "CLI", "Automation", "Open source"] },
+            { name: "F-Droid", url: "f-droid.org", category: "Software", license: "Free", color: "#1976d2", desc: "Free and open-source Android app repository. Install apps without Google Play, focused on FOSS software.", features: ["Android apps", "FOSS", "No tracking", "Repository"] },
+            { name: "FileHorse", url: "filehorse.com", category: "Software", license: "Free", color: "#f59e0b", desc: "Safe software downloads for Windows. Clean installers and version history for popular programs.", features: ["Windows software", "Safe downloads", "Versions", "Free"] },
+            { name: "GitHub", url: "github.com", category: "Software", license: "Free", color: "#24292e", desc: "The largest code hosting platform. Host open-source and private repositories, collaborate and ship software.", features: ["Code hosting", "Git", "Collaboration", "Open source"] },
+            { name: "Homebrew", url: "brew.sh", category: "Software", license: "Free", color: "#fbb040", desc: "The missing package manager for macOS (and Linux). Install thousands of tools with simple commands.", features: ["macOS packages", "CLI", "Open source", "Easy installs"] },
+            { name: "itch.io", url: "itch.io", category: "Software", license: "Freemium", color: "#fa5c5c", desc: "Marketplace for indie games, tools and creative assets. Many free and pay-what-you-want items.", features: ["Indie games", "Tools", "Assets", "Creators"] },
+            { name: "Microsoft Store", url: "apps.microsoft.com", category: "Software", license: "Freemium", color: "#00a4ef", desc: "Official store for Windows apps and games. Free and paid apps with automatic updates.", features: ["Windows apps", "Games", "Updates", "Secure"] },
+            { name: "Ninite", url: "ninite.com", category: "Software", license: "Free", color: "#6b7280", desc: "Install and update multiple popular Windows programs at once with a single installer. No toolbars or junk.", features: ["Bulk install", "Windows", "Clean installers", "Free"] },
+            { name: "Softpedia", url: "softpedia.com", category: "Software", license: "Free", color: "#1a73e8", desc: "Large software library with reviews, news and safe downloads for Windows, Mac, Linux and mobile.", features: ["Software library", "Reviews", "Downloads", "News"] },
+            { name: "SourceForge", url: "sourceforge.net", category: "Software", license: "Free", color: "#ff6600", desc: "Open-source software directory and hosting. Download free software and find project source code.", features: ["Open source", "Downloads", "Project hosting", "Free"] },
+            { name: "Steam", url: "store.steampowered.com", category: "Software", license: "Paid", color: "#1b2838", desc: "Leading digital distribution platform for PC games. Buy, download and play games with friends.", features: ["PC games", "Digital store", "Community", "Cloud saves"] },
+
+            // Templates and themes
+            { name: "BootstrapMade", url: "bootstrapmade.com", category: "Templates and themes", license: "Freemium", color: "#0d6efd", desc: "Free and premium Bootstrap website templates. Clean, modern designs ready for customization.", features: ["Bootstrap", "Templates", "Responsive", "Free & pro"] },
+            { name: "Colorlib", url: "colorlib.com", category: "Templates and themes", license: "Free", color: "#ff6b6b", desc: "Free HTML and WordPress themes. High-quality designs you can download and use without cost.", features: ["Free themes", "HTML", "WordPress", "Responsive"] },
+            { name: "Envato Elements", url: "elements.envato.com", category: "Templates and themes", license: "Paid", color: "#82b541", desc: "Unlimited downloads of templates, themes, graphics, photos, music and more for one monthly fee.", features: ["Unlimited downloads", "Templates", "Stock assets", "Subscription"] },
+            { name: "Flowbite", url: "flowbite.com", category: "Templates and themes", license: "Freemium", color: "#1c64f2", desc: "UI components and templates built with Tailwind CSS. Free open-source library plus Pro version.", features: ["Tailwind", "Components", "Templates", "UI kit"] },
+            { name: "HTML5 UP", url: "html5up.net", category: "Templates and themes", license: "Free", color: "#4a4a4a", desc: "Responsive HTML5 and CSS3 site templates. Free for personal and commercial use under Creative Commons.", features: ["HTML5 templates", "Responsive", "Free", "Creative Commons"] },
+            { name: "Start Bootstrap", url: "startbootstrap.com", category: "Templates and themes", license: "Free", color: "#1e293b", desc: "Free Bootstrap themes and templates. Clean starting points for dashboards, landing pages and admin panels.", features: ["Bootstrap", "Themes", "Dashboards", "Free"] },
+            { name: "TemplateMonster", url: "templatemonster.com", category: "Templates and themes", license: "Paid", color: "#e74c3c", desc: "Marketplace for website templates, WordPress themes, Shopify themes and more.", features: ["Templates", "WordPress", "Shopify", "Marketplace"] },
+            { name: "ThemeForest", url: "themeforest.net", category: "Templates and themes", license: "Paid", color: "#82b541", desc: "The largest marketplace for website themes and templates. Thousands of WordPress, HTML and CMS themes.", features: ["WordPress themes", "HTML templates", "Marketplace", "Envato"] },
+            { name: "WordPress themes", url: "wordpress.org/themes/", category: "Templates and themes", license: "Free", color: "#21759b", desc: "Official free WordPress theme directory. Thousands of free themes reviewed and hosted by WordPress.org.", features: ["WordPress", "Free themes", "Official", "Customizable"] },
+
+            // Extra popular tools added (beyond original 83)
+            { name: "Kaboompics", url: "kaboompics.com", category: "Photos and video", license: "Free", color: "#ff6b6b", desc: "Free high-quality lifestyle and styled stock photos. Great for blogs, websites and commercial use.", features: ["Free photos", "Lifestyle", "Commercial use", "High quality"] },
+            { name: "Burst", url: "burst.shopify.com", category: "Photos and video", license: "Free", color: "#96bf48", desc: "Free stock photos by Shopify. Especially good for e-commerce, product and business images.", features: ["Free photos", "E-commerce", "Business", "Commercial use"] },
+            { name: "StockSnap", url: "stocksnap.io", category: "Photos and video", license: "Free", color: "#3b82f6", desc: "Beautiful free stock photos under CC0 license. No attribution required.", features: ["Free photos", "CC0", "No attribution", "Commercial"] },
+            { name: "Gratisography", url: "gratisography.com", category: "Photos and video", license: "Free", color: "#111", desc: "Quirky, unique and free stock photos that do not look like typical stock. Free for commercial use.", features: ["Unique photos", "Free", "Commercial", "Creative"] },
+            { name: "Vecteezy", url: "vecteezy.com", category: "Design assets", license: "Freemium", color: "#00b4d8", desc: "Free and premium vectors, illustrations, stock photos and videos. Large free library available.", features: ["Vectors", "Illustrations", "Photos", "Free + Premium"] },
+            { name: "Lucide", url: "lucide.dev", category: "Icons", license: "Free", color: "#f56565", desc: "Beautiful open-source icon library. Clean stroke icons perfect for modern web and app UIs.", features: ["Open source", "SVG icons", "React & Vue", "Consistent"] },
+            { name: "Tabler Icons", url: "tabler-icons.io", category: "Icons", license: "Free", color: "#206bc4", desc: "Over 5000 free MIT-licensed SVG icons. Excellent for dashboards and admin panels.", features: ["5000+ icons", "SVG", "MIT license", "Dashboards"] },
+            { name: "Phosphor Icons", url: "phosphoricons.com", category: "Icons", license: "Free", color: "#3b82f6", desc: "Flexible icon family with 6 weights (thin to duotone). Free and open source.", features: ["Multiple weights", "Open source", "SVG", "Flexible"] },
+            { name: "Iconoir", url: "iconoir.com", category: "Icons", license: "Free", color: "#111", desc: "Free open-source icons with a clean, light stroke style. Great for modern interfaces.", features: ["Open source", "Clean style", "SVG", "MIT"] },
+            { name: "Remix Icon", url: "remixicon.com", category: "Icons", license: "Free", color: "#1e90ff", desc: "Open-source neutral icon system. Line and fill pairs, free for commercial use.", features: ["Open source", "Line + Fill", "Neutral style", "Commercial"] },
+            { name: "ByetHost", url: "byethost.com", category: "Hosting and domains", license: "Free", color: "#22c55e", desc: "Free web hosting with PHP, MySQL and no ads on your site. Good InfinityFree alternative.", features: ["Free hosting", "PHP & MySQL", "No ads", "Custom domain"] },
+            { name: "AwardSpace", url: "awardspace.com", category: "Hosting and domains", license: "Freemium", color: "#f59e0b", desc: "Free hosting since 2003 with email, PHP and MySQL. Paid plans available for more resources.", features: ["Free hosting", "Email", "PHP", "Long established"] },
+            { name: "Replit", url: "replit.com", category: "Code tools", license: "Freemium", color: "#f26207", desc: "Browser-based IDE and hosting. Code, collaborate and deploy projects online. Free plan available.", features: ["Online IDE", "Hosting", "Collaboration", "Many languages"] },
+            { name: "StackBlitz", url: "stackblitz.com", category: "Code tools", license: "Freemium", color: "#1389fd", desc: "Instant full-stack development environment in the browser. Powered by WebContainers.", features: ["Online IDE", "WebContainers", "Instant", "Frontend focus"] },
+            { name: "CodePen", url: "codepen.io", category: "Code tools", license: "Freemium", color: "#47cf73", desc: "Online code editor and community for front-end developers. Share and experiment with HTML, CSS and JS.", features: ["Front-end playground", "Community", "Live preview", "Shareable"] },
+            { name: "Photopea", url: "photopea.com", category: "Online tools", license: "Freemium", color: "#18a0fb", desc: "Free online photo editor that works like Photoshop. Supports PSD, XD, Sketch and many formats.", features: ["Online Photoshop", "PSD support", "Free", "No install"] }
+        ];
+
+        // Category order matching the screenshot style
+        const categoryOrder = [
+            "All",
+            "Software",
+            "Code tools",
+            "Templates and themes",
+            "Design assets",
+            "Photos and video",
+            "Fonts",
+            "Icons",
+            "Audio",
+            "Plugins",
+            "Hosting and domains",
+            "Online tools"
+        ];
+
+        let currentCategory = "All";
+        let currentLicense = "all";
+        let searchQuery = "";
+
+        // Build category pills
+        function buildPills() {
+            const container = document.getElementById("categoryPills");
+            container.innerHTML = "";
+
+            categoryOrder.forEach(cat => {
+                const count = cat === "All" ? tools.length : tools.filter(t => t.category === cat).length;
+                if (count === 0 && cat !== "All") return;
+
+                const btn = document.createElement("button");
+                btn.className = "cat-pill" + (currentCategory === cat ? " active" : "");
+                btn.innerHTML = `${cat} <span class="cat-count">${count}</span>`;
+                btn.onclick = () => {
+                    currentCategory = cat;
+                    buildPills();
+                    renderTools();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // Logo helper – Google favicon (free, no key needed)
+        function getLogoUrl(domain) {
+            return `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
+        }
+
+        function getColor(name) {
+            const colors = ["#ef4444","#f59e0b","#10b981","#3b82f6","#8b5cf6","#ec4899","#14b8a6","#f97316","#6366f1","#84cc16"];
+            let hash = 0;
+            for (let i = 0; i < name.length; i++) hash = name.charCodeAt(i) + ((hash << 5) - hash);
+            return colors[Math.abs(hash) % colors.length];
+        }
+
+        function getInitials(name) {
+            const words = name.replace(/[()]/g, "").split(" ");
+            if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+            return name.substring(0, 2).toUpperCase();
+        }
+
+        // Filter tools
+        function getFiltered() {
+            return tools.filter(t => {
+                const matchCat = currentCategory === "All" || t.category === currentCategory;
+                const matchLicense = currentLicense === "all" || t.license === currentLicense;
+                const q = searchQuery.toLowerCase().trim();
+                const matchSearch = !q ||
+                    t.name.toLowerCase().includes(q) ||
+                    t.url.toLowerCase().includes(q) ||
+                    t.category.toLowerCase().includes(q) ||
+                    t.desc.toLowerCase().includes(q) ||
+                    t.license.toLowerCase().includes(q) ||
+                    (t.features && t.features.some(f => f.toLowerCase().includes(q)));
+                return matchCat && matchLicense && matchSearch;
+            });
+        }
+
+        // Render cards
+        function renderTools() {
+            const grid = document.getElementById("toolsGrid");
+            const empty = document.getElementById("emptyState");
+            const info = document.getElementById("resultsInfo");
+            const filtered = getFiltered();
+
+            grid.innerHTML = "";
+            if (filtered.length === 0) {
+                empty.style.display = "block";
+                info.textContent = "No tools found";
+                return;
+            }
+            empty.style.display = "none";
+            info.textContent = `Showing ${filtered.length} tool${filtered.length !== 1 ? "s" : ""}${currentCategory !== "All" ? " in " + currentCategory : ""}`;
+
+            filtered.forEach(tool => {
+                const card = document.createElement("div");
+                card.className = "card";
+                card.onclick = (e) => {
+                    if (e.target.closest(".open-btn")) return;
+                    openModal(tool);
+                };
+
+                const color = tool.color || getColor(tool.name);
+                const licenseClass = tool.license === "Free" ? "badge-free" : tool.license === "Paid" ? "badge-paid" : "badge-freemium";
+                const logoUrl = getLogoUrl(tool.url);
+
+                card.innerHTML = `
+                    <div class="card-top">
+                        <div class="card-left">
+                            <div class="logo" style="background:${color}">
+                                <img src="${logoUrl}" alt="${tool.name} logo" onerror="this.style.display='none'; this.parentElement.textContent='${getInitials(tool.name)}';">
+                            </div>
+                            <div class="card-info">
+                                <div class="card-name">${tool.name}</div>
+                                <div class="card-url">${tool.url}</div>
+                            </div>
+                        </div>
+                        <a class="open-btn" href="https://${tool.url}" target="_blank" rel="noopener" onclick="event.stopPropagation()">Open ↗</a>
+                    </div>
+                    <div class="card-badges">
+                        <span class="badge ${licenseClass}">${tool.license}</span>
+                        <span class="badge badge-cat">${tool.category}</span>
+                    </div>
+                    <div class="card-desc">${tool.desc}</div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Modal
+        function openModal(tool) {
+            const color = tool.color || getColor(tool.name);
+            const modalLogo = document.getElementById("modalLogo");
+            modalLogo.style.background = color;
+            modalLogo.innerHTML = `<img src="${getLogoUrl(tool.url)}" alt="${tool.name}" onerror="this.style.display='none'; this.parentElement.textContent='${getInitials(tool.name)}';">`;
+            document.getElementById("modalTitle").textContent = tool.name;
+            document.getElementById("modalUrl").textContent = tool.url;
+
+            const badges = document.getElementById("modalBadges");
+            const licenseClass = tool.license === "Free" ? "badge-free" : tool.license === "Paid" ? "badge-paid" : "badge-freemium";
+            badges.innerHTML = `
+                <span class="badge ${licenseClass}">${tool.license}</span>
+                <span class="badge badge-cat">${tool.category}</span>
+            `;
+
+            document.getElementById("modalDesc").textContent = tool.desc;
+
+            const features = document.getElementById("modalFeatures");
+            features.innerHTML = (tool.features || []).map(f => `<span class="feature-tag">${f}</span>`).join("");
+
+            let licenseText = "";
+            if (tool.license === "Free") {
+                licenseText = "Completely free to use. Check the site for any attribution requirements or usage limits.";
+            } else if (tool.license === "Paid") {
+                licenseText = "Paid / subscription required for full access. Some sites may offer limited free trials.";
+            } else {
+                licenseText = "Freemium – free basic features available. Paid plans unlock more features, higher limits or commercial rights.";
+            }
+            document.getElementById("modalLicense").textContent = licenseText;
+
+            const link = document.getElementById("modalOpenLink");
+            link.href = "https://" + tool.url;
+
+            document.getElementById("modalOverlay").classList.add("active");
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("modalOverlay").classList.remove("active");
+            document.body.style.overflow = "";
+        }
+
+        // Events
+        document.getElementById("modalClose").onclick = closeModal;
+        document.getElementById("modalCloseBtn").onclick = closeModal;
+        document.getElementById("modalOverlay").onclick = (e) => {
+            if (e.target === document.getElementById("modalOverlay")) closeModal();
+        };
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeModal();
+        });
+
+        const searchInput = document.getElementById("searchInput");
+        searchInput.addEventListener("input", () => {
+            searchQuery = searchInput.value;
+            renderTools();
+        });
+        document.getElementById("searchBtn").onclick = () => {
+            searchQuery = searchInput.value;
+            renderTools();
+        };
+
+        document.getElementById("licenseFilter").addEventListener("change", (e) => {
+            currentLicense = e.target.value;
+            renderTools();
+        });
+
+        // Init
+        buildPills();
+        renderTools();
+    </script>
+</body>
+</html>

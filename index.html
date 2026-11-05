@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="Free online file converters and tools. Convert images, audio, video and documents, resize and compress images. Files are processed in your browser and never uploaded.">
+  <meta property="og:title" content="WebToolVault – Free Online File Converters & Tools">
+  <meta property="og:description" content="Convert, resize and compress files right in your browser. No sign-up, no ads, no uploads.">
+  <meta property="og:type" content="website">
+  <title>WebToolVault – Free Online File Converters &amp; Tools</title>
+  <meta name="theme-color" content="#1f6b55">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* ===== Keyboard focus (all links and summaries) ===== */
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--ac);
+      outline-offset: 3px;
+      border-radius: 8px;
+    }
+
+    /* ===== Hero chips ===== */
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 14px auto 0;
+      padding: 0;
+      list-style: none;
+      max-width: 640px;
+    }
+    .chips li {
+      background: var(--soft);
+      color: var(--ac-dark);
+      border: 1px solid var(--ac);
+      border-radius: 999px;
+      padding: 5px 13px;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    /* ===== Tools grid ===== */
+    .tools-head { text-align: center; margin: 4px 0 14px; }
+    .tools-head h2 { margin: 0; font-size: 1.2rem; border: none; padding: 0; }
+    .tools-head p { margin: 4px 0 0; color: var(--muted); font-size: 0.9rem; }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .tool-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+    .tool-card:hover {
+      border-color: var(--ac);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(31, 107, 85, 0.14);
+      text-decoration: none;
+      color: var(--text);
+    }
+    .tool-card .ic {
+      flex-shrink: 0;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--soft);
+      border-radius: 10px;
+      font-size: 1.35rem;
+    }
+    .tool-card .tx { min-width: 0; }
+    .tool-card b { display: block; font-size: 0.95rem; line-height: 1.25; }
+    .tool-card small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.78rem;
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .tool-card .new {
+      font-size: 0.62rem;
+      background: var(--ac);
+      color: #fff;
+      border-radius: 999px;
+      padding: 1px 7px;
+      margin-left: 5px;
+      vertical-align: middle;
+      font-weight: 700;
+    }
+
+    /* ===== Popular tasks ===== */
+    .quick {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    .quick span { color: var(--muted); font-size: 0.88rem; margin-right: 4px; }
+    .quick a {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--ac);
+      text-decoration: none;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    .quick a:hover { background: var(--soft); border-color: var(--ac); text-decoration: none; }
+
+    /* ===== Content sections ===== */
+    .block { margin-top: 52px; }
+    .block > h2 {
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 0 0 6px;
+      border: none;
+      padding: 0;
+    }
+    .block > .lead {
+      text-align: center;
+      color: var(--muted);
+      max-width: 640px;
+      margin: 0 auto 22px;
+      font-size: 0.97rem;
+    }
+
+    .feat-grid,
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+    .feat,
+    .step,
+    .use {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+    }
+    .feat { padding: 20px 18px; border-top: 3px solid var(--ac); }
+    .feat .fi { font-size: 1.6rem; display: block; margin-bottom: 8px; }
+    .feat h3 { margin: 0 0 6px; font-size: 1rem; color: var(--ac); }
+    .feat p { margin: 0; font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+
+    .steps { counter-reset: step; }
+    .step { padding: 20px 18px 18px; }
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      background: var(--ac);
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .step h3 { margin: 0 0 6px; font-size: 1rem; }
+    .step p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+    .use-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+    .use { padding: 18px 20px; }
+    .use h3 { margin: 0 0 8px; font-size: 1rem; }
+    .use h3 a { color: var(--ac); }
+    .use ul { margin: 0; padding-left: 18px; }
+    .use li { font-size: 0.9rem; color: var(--muted); margin-bottom: 4px; }
+
+    /* ===== Privacy band with simple flow ===== */
+    .privacy-band {
+      background: var(--soft);
+      border: 2px solid var(--ac);
+      border-radius: 16px;
+      padding: 26px 22px;
+      box-shadow: var(--shadow);
+    }
+    .privacy-band h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+      color: var(--ac-dark);
+      text-align: left;
+      border: none;
+      padding: 0;
+    }
+    .privacy-band p { margin: 0 0 12px; color: #1a3d32; }
+    .privacy-band ul { margin: 0 0 14px; padding-left: 20px; }
+    .privacy-band li { color: #1a3d32; margin-bottom: 5px; font-weight: 500; font-size: 0.95rem; }
+    .privacy-band .small { font-size: 0.85rem; font-weight: 400; color: #2c5a49; margin: 0; }
+
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 18px 0 16px;
+      padding: 0;
+      list-style: none;
+    }
+    .flow li {
+      background: #fff;
+      border: 1px solid var(--ac);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--ac-dark);
+      margin: 0;
+    }
+    .flow li.arrow {
+      background: none;
+      border: none;
+      padding: 0 2px;
+      color: var(--ac);
+      font-size: 1.1rem;
+    }
+    .flow li.off {
+      border-style: dashed;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    /* ===== Resources banner ===== */
+    .res-banner {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px 22px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+    .res-banner .big { font-size: 2.4rem; }
+    .res-banner .tx { flex: 1; min-width: 220px; }
+    .res-banner h2 {
+      margin: 0 0 6px;
+      font-size: 1.25rem;
+      text-align: left;
+      border: none;
+      padding: 0;
+    }
+    .res-banner p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+    .res-banner .go,
+    .cta a.btn-go {
+      display: inline-block;
+      background: var(--ac);
+      color: #fff;
+      font-weight: 600;
+      padding: 11px 22px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .res-banner .go:hover,
+    .cta a.btn-go:hover { background: var(--ac-dark); color: #fff; text-decoration: none; }
+
+    /* ===== FAQ ===== */
+    .faq { max-width: 780px; margin: 0 auto; }
+    .faq details {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 0 18px;
+      margin-bottom: 10px;
+      box-shadow: var(--shadow);
+    }
+    .faq details[open] { border-color: var(--ac); }
+    .faq summary {
+      cursor: pointer;
+      font-weight: 600;
+      padding: 14px 0;
+      font-size: 0.97rem;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-size: 1.3rem; color: var(--ac); flex-shrink: 0; }
+    .faq details[open] summary::after { content: "–"; }
+    .faq details p { margin: 0 0 14px; color: var(--muted); font-size: 0.92rem; line-height: 1.6; }
+
+    /* ===== Final call to action ===== */
+    .cta {
+      text-align: center;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 30px 20px;
+      box-shadow: var(--shadow);
+    }
+    .cta h2 { margin: 0 0 6px; font-size: 1.3rem; border: none; padding: 0; }
+    .cta p { margin: 0 0 16px; color: var(--muted); }
+
+    @media (max-width: 520px) {
+      .tool-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .tool-card { padding: 10px; gap: 9px; }
+      .tool-card .ic { width: 34px; height: 34px; font-size: 1.1rem; }
+      .tool-card small { display: none; }
+      .block { margin-top: 40px; }
+      .flow li.arrow { display: none; }
+      .flow { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .tool-card, .quick a, .res-banner .go, .cta a.btn-go { transition: none; }
+      .tool-card:hover { transform: none; }
+    }
+  </style>
+<!-- SEO:START -->
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://yourdomain.com/">
+<meta property="og:site_name" content="WebToolVault">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://yourdomain.com/">
+<meta property="og:image" content="https://yourdomain.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WebToolVault - free online file converters">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WebToolVault – Free Online File Converters &amp; Tools">
+<meta name="twitter:description" content="Free online file converters and tools. Convert images, audio, video and documents, resize and compress images. Files are processed in your browser and never uploaded.">
+<meta name="twitter:image" content="https://yourdomain.com/og-image.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/icon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/icon-16.png">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "WebToolVault", "url": "https://yourdomain.com/", "description": "Free online file converters and tools. Convert images, audio, video and documents, resize and compress images. Files are processed in your browser and never uploaded.", "inLanguage": "en"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "WebToolVault", "url": "https://yourdomain.com/", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}}</script>
+<!-- SEO:END -->
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="index.html">WebToolVault</a>
+    <h1>Free Online File Converters &amp; Tools</h1>
+    <p class="sub">Choose a tool below. All processing happens in your browser, so your files never leave your device.</p>
+    <ul class="chips" aria-label="Key features">
+      <li>100% free</li>
+      <li>No ads</li>
+      <li>No sign-up</li>
+      <li>Private: runs in your browser</li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- ===== TOOLS ===== -->
+    <section id="tools" aria-labelledby="tools-title">
+      <div class="tools-head">
+        <h2 id="tools-title">Pick a tool</h2>
+        <p>Select what you want to do. It takes a few seconds.</p>
+      </div>
+      <div class="tool-grid">
+        <a class="tool-card" href="image.html">
+          <span class="ic" aria-hidden="true">🖼️</span>
+          <span class="tx"><b>Image Converter</b><small>PNG, JPG, WebP, GIF, BMP, ICO</small></span>
+        </a>
+        <a class="tool-card" href="resizer.html">
+          <span class="ic" aria-hidden="true">📐</span>
+          <span class="tx"><b>Image Resizer</b><small>By pixels or percentage</small></span>
+        </a>
+        <a class="tool-card" href="compressor.html">
+          <span class="ic" aria-hidden="true">📦</span>
+          <span class="tx"><b>Image Compressor</b><small>Make image files smaller</small></span>
+        </a>
+        <a class="tool-card" href="audio.html">
+          <span class="ic" aria-hidden="true">🎵</span>
+          <span class="tx"><b>Audio Converter</b><small>MP3, WAV, OGG, FLAC, M4A</small></span>
+        </a>
+        <a class="tool-card" href="video.html">
+          <span class="ic" aria-hidden="true">🎬</span>
+          <span class="tx"><b>Video Converter</b><small>MP4, WebM, GIF, MP3</small></span>
+        </a>
+        <a class="tool-card" href="documents.html">
+          <span class="ic" aria-hidden="true">📄</span>
+          <span class="tx"><b>Document &amp; PDF</b><small>JPG to PDF, DOCX, Excel, TXT</small></span>
+        </a>
+        <a class="tool-card" href="developer.html">
+          <span class="ic" aria-hidden="true">⚙️</span>
+          <span class="tx"><b>Developer Tools</b><small>JSON, CSV, XML, Base64, YAML</small></span>
+        </a>
+        <a class="tool-card" href="resources.html">
+          <span class="ic" aria-hidden="true">🎁</span>
+          <span class="tx"><b>Free Resources<span class="new">NEW</span></b><small>Free storage, software and more</small></span>
+        </a>
+        <a class="tool-card" href="more.html">
+          <span class="ic" aria-hidden="true">🧰</span>
+          <span class="tx"><b>More Tools</b><small>All tools in one place</small></span>
+        </a>
+      </div>
+
+      <div class="quick">
+        <span>Popular:</span>
+        <a href="image.html">PNG to JPG</a>
+        <a href="compressor.html">Compress an image</a>
+        <a href="video.html">Video to MP3</a>
+        <a href="documents.html">JPG to PDF</a>
+        <a href="resizer.html">Resize a photo</a>
+      </div>
+    </section>
+
+    <!-- ===== WHY ===== -->
+    <section class="block">
+      <h2>Why WebToolVault?</h2>
+      <p class="lead">Simple tools that do one job well, with no sign-ups, no ads and no upload waiting.</p>
+      <div class="feat-grid">
+        <div class="feat">
+          <span class="fi" aria-hidden="true">🔒</span>
+          <h3>Private by design</h3>
+          <p>Your files are processed inside your browser. They are never uploaded to our servers.</p>
+        </div>
+        <div class="feat">
+          <span class="fi" aria-hidden="true">⚡</span>
+          <h3>Fast, no upload wait</h3>
+          <p>Nothing travels over the internet, so you do not wait for files to upload or download.</p>
+        </div>
+        <div class="feat">
+          <span class="fi" aria-hidden="true">🆓</span>
+          <h3>Free, no accounts</h3>
+          <p>No sign-up, no payment screens, and no limit on how many files you can convert.</p>
+        </div>
+        <div class="feat">
+          <span class="fi" aria-hidden="true">🚫</span>
+          <h3>No ads</h3>
+          <p>A clean page that stays out of your way. Pick a tool and get your result.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== HOW IT WORKS ===== -->
+    <section class="block">
+      <h2>How it works</h2>
+      <p class="lead">Three simple steps. They are the same on every tool.</p>
+      <div class="steps">
+        <div class="step">
+          <h3>Choose a tool</h3>
+          <p>Pick the converter or tool you need from the list at the top of this page.</p>
+        </div>
+        <div class="step">
+          <h3>Select your file</h3>
+          <p>Click the button or drag and drop your file. Only your browser reads it.</p>
+        </div>
+        <div class="step">
+          <h3>Convert and download</h3>
+          <p>Choose the output format, convert, and save the result to your device.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== WHAT YOU CAN DO ===== -->
+    <section class="block">
+      <h2>What can you do here?</h2>
+      <p class="lead">Common tasks people use WebToolVault for.</p>
+      <div class="use-grid">
+        <div class="use">
+          <h3><a href="image.html">Images</a></h3>
+          <ul>
+            <li>Convert PNG to JPG, JPG to WebP, and more</li>
+            <li><a href="resizer.html">Resize</a> photos for social media or websites</li>
+            <li><a href="compressor.html">Compress</a> images to make files smaller</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3><a href="audio.html">Audio</a></h3>
+          <ul>
+            <li>Convert between MP3, WAV, OGG, FLAC and M4A</li>
+            <li>Prepare audio for phones, players or editing</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3><a href="video.html">Video</a></h3>
+          <ul>
+            <li>Convert videos to MP4 or WebM</li>
+            <li>Make a short GIF from a video clip</li>
+            <li>Extract the audio as MP3 or WAV</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3><a href="documents.html">Documents</a></h3>
+          <ul>
+            <li>Turn JPG images into a PDF</li>
+            <li>Work with DOCX, Excel and TXT files</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3><a href="developer.html">Developer tools</a></h3>
+          <ul>
+            <li>Format and convert JSON, CSV, XML and YAML</li>
+            <li>Encode and decode Base64</li>
+          </ul>
+        </div>
+        <div class="use">
+          <h3><a href="resources.html">Free resources</a></h3>
+          <ul>
+            <li>Find where to get free cloud storage</li>
+            <li>Discover free software, fonts, icons and stock photos</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRIVACY ===== -->
+    <section class="block">
+      <div class="privacy-band">
+        <h2>🔒 Your privacy comes first</h2>
+        <p>Everything happens on your own device, so we never get to see your files.</p>
+
+        <ul class="flow" aria-label="How your file moves">
+          <li>Your file</li>
+          <li class="arrow" aria-hidden="true">→</li>
+          <li>Your browser</li>
+          <li class="arrow" aria-hidden="true">→</li>
+          <li>Your download</li>
+          <li class="arrow" aria-hidden="true">•</li>
+          <li class="off">Our server: not used</li>
+        </ul>
+
+        <ul>
+          <li>Files are never uploaded to our servers</li>
+          <li>No accounts and no personal information needed</li>
+          <li>No advertising trackers</li>
+        </ul>
+        <p class="small">
+          Some tools load open-source libraries (for example the video engine) from a public CDN the first time you use them.
+          Only the library is downloaded. Your files are not sent anywhere. Read the full
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FREE RESOURCES ===== -->
+    <section class="block">
+      <div class="res-banner">
+        <span class="big" aria-hidden="true">🎁</span>
+        <div class="tx">
+          <h2>Free Resources</h2>
+          <p>Looking for free cloud storage, software, fonts, icons or stock photos? Browse our hand-picked lists in one place.</p>
+        </div>
+        <a class="go" href="resources.html">Browse resources</a>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="block">
+      <h2>Frequently asked questions</h2>
+      <p class="lead">Quick answers to common questions.</p>
+      <div class="faq">
+        <details>
+          <summary>Is WebToolVault really free?</summary>
+          <p>Yes. All tools are free to use, with no accounts, no ads and no payment required.</p>
+        </details>
+        <details>
+          <summary>Are my files uploaded to a server?</summary>
+          <p>No. Your files are processed locally in your browser and are never uploaded to our servers. This is the main idea behind WebToolVault.</p>
+        </details>
+        <details>
+          <summary>Why does the video converter download an engine first?</summary>
+          <p>The video converter uses FFmpeg, which runs inside your browser. The first time you use it, your browser downloads the engine (about 30 MB) from a public CDN. After that it is usually cached by your browser, and the conversion itself happens on your device.</p>
+        </details>
+        <details>
+          <summary>Do I need to create an account?</summary>
+          <p>No. There is no sign-up or login anywhere on the website.</p>
+        </details>
+        <details>
+          <summary>Is there a file size limit?</summary>
+          <p>We do not set a limit. Because your device does the work, very large files can be slow or fail if your browser runs out of memory. For big videos, a desktop browser works best.</p>
+        </details>
+        <details>
+          <summary>Which browsers are supported?</summary>
+          <p>Modern versions of Chrome, Edge, Firefox, Brave and Safari work well. Keeping your browser updated gives the best results.</p>
+        </details>
+        <details>
+          <summary>Will the quality of my file change?</summary>
+          <p>It depends on the format. Lossy formats (like JPG, MP3 or MP4) and image compression trade a little quality for a smaller file. Keep your original file until you have checked the result.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="block">
+      <div class="cta">
+        <h2>Ready to get started?</h2>
+        <p>Pick a tool and convert your first file in seconds.</p>
+        <a class="btn-go" href="#tools">Choose a tool</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    WebToolVault – a free resource. No ads, no accounts, no file uploads.
+    <br>
+    <a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is WebToolVault really free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. All tools are free to use, with no accounts, no ads and no payment required." }
+      },
+      {
+        "@type": "Question",
+        "name": "Are my files uploaded to a server?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Your files are processed locally in your browser and are never uploaded to our servers." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to create an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. There is no sign-up or login anywhere on the website." }
+      }
+    ]
+  }
+  </script>
+</body>
+</html>

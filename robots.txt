@@ -1,0 +1,6 @@
+# robots.txt for WebToolVault
+# Sab search engines aur bots ko poori website dekhne ki ijazat hai
+User-agent: *
+Allow: /
+
+Sitemap: https://yourdomain.com/sitemap.xml
